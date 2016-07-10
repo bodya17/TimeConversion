@@ -41,7 +41,7 @@
         <ui-select-match placeholder="Select or search a country in the list...">
             {{$select.selected}}
         </ui-select-match>
-        <ui-select-choices group-by="groupByCountry" repeat="city in cities | filter: $select.search">
+        <ui-select-choices group-by="country" repeat="city in cities | filter: $select.search">
             <span ng-bind-html="city | highlight: $select.search"></span>
         </ui-select-choices>
          {{ $select.selected }}
