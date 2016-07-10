@@ -3,9 +3,10 @@ var app = angular.module('TimePicker', ['ngSanitize', 'ui.bootstrap', 'ui.select
 app.controller('TimePickerController', ['$scope', '$filter', function($scope, $filter) {
 
     $scope.cities = moment.tz.names(); // fetch all locations
+    
     $scope.city = {
-      selected: $scope.cities[Math.floor(Math.random() * $scope.cities.length)]
-    }
+        selected: $scope.cities[Math.floor(Math.random() * $scope.cities.length)]
+    };
     
     $scope.country = (city) => city.substring(0, city.indexOf('/')); // get country
 

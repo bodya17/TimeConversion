@@ -33,10 +33,9 @@
     <link rel="stylesheet" href="main.css">
 </head>
 
-<body ng-app="TimePicker">
+<body>
   
-  <div ng-controller="TimePickerController">
-
+  <div ng-app="TimePicker" ng-controller="TimePickerController">
     <ui-select ng-model="city.selected">
         <ui-select-match placeholder="Select or search a country in the list...">
             {{$select.selected}}
@@ -44,7 +43,6 @@
         <ui-select-choices group-by="country" repeat="city in cities | filter: $select.search">
             <span ng-bind-html="city | highlight: $select.search"></span>
         </ui-select-choices>
-         {{ $select.selected }}
     </ui-select>
 
     <uib-timepicker ng-model="time" show-meridian="false"></uib-timepicker>
